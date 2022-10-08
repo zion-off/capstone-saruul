@@ -9,43 +9,47 @@
         }
         .timer .gif {
             z-index: +10;
-            position: absolute;
+            display: inline-block;
+            position: relative;
             top: 2vh;
-            left: 1vw;
+            left: -2vw;
         }
-        #counter {
+        figure figcaption {
+            text-align: center;
+        }
+        .counter {
             z-index: +20;
-            position: absolute;
-            top: 8.5vw; 
-            left: 5vw;
+            /* top: 8.5vw;  */
             color: red;
-            font-size: medium;
+            font-size: x-large;
+            font-weight: bold;
         }
         #slides {
             position: absolute;
+            top: 0;
             left: 10vw;
             width: 80vw;
             height: 100vh;
         }
     </style>
     <body>
-        <span class="timer">
+        <div class="timer">
             <div class="gif">
-                <img src="assets/timer.gif" style="width:8vw"></div>
-            <div>
-                <p id="counter" 
-                style="font-family: Arial, Helvetica, sans-serif;"></p>
+                <figure>
+                    <img src="assets/timer.gif" style="width:8vw">
+                    <figcaption class="counter" id="counter" style="font-family: Arial, Helvetica, sans-serif;"></figcaption>
+                </figure>
             </div>
+        </div>
+        <span class="slides">
+            <iframe id="slides" src="https://docs.google.com/presentation/d/e/2PACX-1vTCW0ttSm4UEbmi_1IXgT1AARnHDq-SWE7Vog8ibBJ3WLf6yS1efIRd_XEbkxJK8jNCyhpqWuC5zxZJ/embed?start=false&loop=false&delayms=90000" frameborder="0"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
         </span>
-
-        <iframe id="slides" src="https://docs.google.com/presentation/d/e/2PACX-1vTCW0ttSm4UEbmi_1IXgT1AARnHDq-SWE7Vog8ibBJ3WLf6yS1efIRd_XEbkxJK8jNCyhpqWuC5zxZJ/embed?start=false&loop=false&delayms=90000" frameborder="0"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-
         <script>
             var start = 0;
             var timer = setInterval(function() {
                 start++;
                 document.getElementById("counter").innerHTML = start;
-            }, 5000);
+            }, 2000);
         </script>
 
     </body>
