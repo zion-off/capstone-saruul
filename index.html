@@ -4,12 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
-        .mySlides {display:none;}
+        .timer {
+            position: relative;
+        }
         .timer .gif {
             z-index: +10;
             position: absolute;
             top: 2vh;
-            left: 2vw;
+            left: 1vw;
         }
         #counter {
             z-index: +20;
@@ -19,47 +21,26 @@
             color: red;
             font-size: medium;
         }
+        #slides {
+            position: absolute;
+            left: 10vw;
+            width: 80vw;
+            height: 100vh;
+        }
     </style>
     <body>
         <span class="timer">
-            <div class="gif"><img src="assets/timer.gif" style="width:8vw"></div>
-            <p id="counter" style="font-family: Arial, Helvetica, sans-serif;"></p>
+            <div class="gif">
+                <img src="assets/timer.gif" style="width:8vw"></div>
+            <div>
+                <p id="counter" 
+                style="font-family: Arial, Helvetica, sans-serif;"></p>
+            </div>
         </span>
 
-        <div class="w3-content w3-display-container">
-        <img class="mySlides" src="assets/1.jpg" style="width:80vw">
-        <img class="mySlides" src="assets/2.jpg" style="width:80vw">
-        <img class="mySlides" src="assets/3.jpg" style="width:80vw">
-        <img class="mySlides" src="assets/4.jpg" style="width:80vw">
-        <img class="mySlides" src="assets/5.jpg" style="width:80vw">
-        <img class="mySlides" src="assets/6.jpg" style="width:80vw">
-        <img class="mySlides" src="assets/7.jpg" style="width:80vw">
-
-        <button class="w3-button" onclick="plusDivs(-1)">&#10094; Prev</button>
-        <button class="w3-button" onclick="plusDivs(1)">Next &#10095;</button>
-        </div>
+        <iframe id="slides" src="https://docs.google.com/presentation/d/e/2PACX-1vTCW0ttSm4UEbmi_1IXgT1AARnHDq-SWE7Vog8ibBJ3WLf6yS1efIRd_XEbkxJK8jNCyhpqWuC5zxZJ/embed?start=false&loop=false&delayms=90000" frameborder="0"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
         <script>
-            var slideIndex = 1;
-            showDivs(slideIndex);
-
-            function plusDivs(n) {
-            showDivs(slideIndex += n);
-            }
-
-            function showDivs(n) {
-                var i;
-                var x = document.getElementsByClassName("mySlides");
-                if (n > x.length) 
-                    {slideIndex = 1}
-                if (n < 1) 
-                    {slideIndex = x.length}
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";  
-                }
-                x[slideIndex-1].style.display = "block";  
-            }
-
             var start = 0;
             var timer = setInterval(function() {
                 start++;
